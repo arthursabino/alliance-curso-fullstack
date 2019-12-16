@@ -1,0 +1,22 @@
+{
+  "name": "dia1",
+  "version": "1.0.0",
+  "description": "Material do primeiro dia de aula",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arthur Sabino e Silva",
+  "license": "ISC"
+}

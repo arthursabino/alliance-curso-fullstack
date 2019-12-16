@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora inútil</title>
+    <script src="http://localhost:3000/axios.js"></script>
+  </head>
+  <body>
+    <form>
+      <p>
+        <label for="operando1">Primeiro operando</label>
+        <input name="operando1">
+      </p>
+      <p>
+        <label for="operando2">Segundo operando</label>
+        <input name="operando2">
+      </p>
+      <p>
+        <label for="operador">Operador</label>
+        <select name="operador">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+      </p>
+      <p>
+        <input type="button" value="Calcular" onclick="calcular()">
+      </p>
+      <p>
+        <label for="resultado">Resultado</label>
+        <input name="resultado" />
+      </p>
+    </form>
+
+    <script>
+    function calcular() {
+        var pacote = {
+            "operando1": document.getElementsByName("operando1")[0].value,
+            "operando2": document.getElementsByName("operando2")[0].value,
+            "operador": document.getElementsByName("operador")[0].value
+        }
+        axios.post('http://localhost:3000/calculadora', pacote)
+        .then(res => {
+            document.getElementsByName("resultado")[0].value = res.data.resultado;
+        });
+    };
+    </script>
+  </body>
+</html>

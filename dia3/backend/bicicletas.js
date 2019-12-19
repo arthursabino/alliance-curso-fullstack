@@ -11,8 +11,8 @@ router.get('/', async (req, res) => {
     let queryResult = await client.query("select CODIGO, ATIVO from BICICLETAS")
     for (let row of queryResult.rows) {
         resultado.push({
-            codigo: row.CODIGO,
-            ativo: row.ATIVO
+            codigo: row.codigo,
+            ativo: row.ativo
 
         });
     }
